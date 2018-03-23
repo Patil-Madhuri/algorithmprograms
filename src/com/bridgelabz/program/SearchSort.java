@@ -9,12 +9,11 @@ import com.bridgelabz.utility.Utility;
 
 public class SearchSort 
 {
-
-	public static int numberOfElement;
+	public static int mNumberOfElement;
 	
-	public static String[] stringArray;
+	public static String[] mStringArray;
 	
-	public static Integer[] intArray;
+	public static Integer[] mIntArray;
 
 	public static void main(String[] args) 
 	{
@@ -29,37 +28,37 @@ public class SearchSort
 		int choice = utility.inputInteger();
 		switch(choice) {
 		case 1: System.out.println("Enter the number of element you want:");;
-				numberOfElement=utility.inputInteger();
-				intArray= new Integer[numberOfElement];
-				Utility.casses(intArray,1);
+				mNumberOfElement=utility.inputInteger();
+				mIntArray= new Integer[mNumberOfElement];
+				Utility.casses(mIntArray,1);
 				break;
 
 		case 2:	System.out.println("Enter the number of element you want:");;
-				numberOfElement=utility.inputInteger();
-				intArray= new Integer[numberOfElement];
-				Utility.casses(intArray,2);
+				mNumberOfElement=utility.inputInteger();
+				mIntArray= new Integer[mNumberOfElement];
+				Utility.casses(mIntArray,2);
 				break;
 				
 		case 5:	System.out.println("Enter the number of element you want:");;
-				numberOfElement=utility.inputInteger();
-				intArray= new Integer[numberOfElement];
-				Utility.casses(intArray,2);
+				mNumberOfElement=utility.inputInteger();
+				mIntArray= new Integer[mNumberOfElement];
+				Utility.casses(mIntArray,2);
 				break;
 		case 3:	System.out.println("Enter the number of element you want:");;
-				numberOfElement=utility.inputInteger();
-				stringArray= new String[numberOfElement];
-				Utility.casses(stringArray,4);
+				mNumberOfElement=utility.inputInteger();
+				mStringArray= new String[mNumberOfElement];
+				Utility.casses(mStringArray,4);
 				break;
 		case 4:	System.out.println("Enter the number of element you want:");;
-				numberOfElement=utility.inputInteger();
-				stringArray= new String[numberOfElement];
-				Utility.casses(stringArray,3);
+				mNumberOfElement=utility.inputInteger();
+				mStringArray= new String[mNumberOfElement];
+				Utility.casses(mStringArray,3);
 				break;
 				
 		case 6:	System.out.println("Enter the number of element you want:");;
-				numberOfElement=utility.inputInteger();
-				stringArray= new String[numberOfElement];
-				Utility.casses(stringArray,4);
+				mNumberOfElement=utility.inputInteger();
+				mStringArray= new String[mNumberOfElement];
+				Utility.casses(mStringArray,4);
 				break;
 		}
 	}

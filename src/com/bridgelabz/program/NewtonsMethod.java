@@ -13,8 +13,8 @@ public class NewtonsMethod
 	{
 		Utility utility = new Utility();
 		System.out.println("Enter the number: ");
-		double number = utility.inputDouble();
-		Utility.sqrtNewtonsMethod(number);
+		double lNumber = utility.inputDouble();
+		Utility.sqrtNewtonsMethod(lNumber);
 		
 	}
 }

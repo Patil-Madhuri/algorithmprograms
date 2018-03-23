@@ -14,12 +14,12 @@ public class Temperature
 	{
 		Utility utility = new Utility();
 		System.out.println("Enter the temperature in  Fahrenheit to convert into Celsius : ");
-		double fahrenhit = utility.inputDouble();
-		Utility.temperatureConversion(fahrenhit);
+		double lFahrenhiTemperature = utility.inputDouble();
+		Utility.temperatureConversion(lFahrenhiTemperature);
 		
 		System.out.println("Enter the temperature in celsius to convert into fahrenheit: ");
-		double celsius = utility.inputDouble();
-		Utility.temperatureConversion1(celsius);
+		double lCelsiusTemperature = utility.inputDouble();
+		Utility.temperatureConversion1(lCelsiusTemperature);
 		
 	}
 }

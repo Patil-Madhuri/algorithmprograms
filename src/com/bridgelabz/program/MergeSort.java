@@ -12,18 +12,18 @@ public class MergeSort
 	{
 		Utility utility = new Utility();
 		System.out.println("Enter size of array: ");
-		int size = utility.inputInteger();
-		int array[] = new int[size];
+		int lArraySize = utility.inputInteger();
+		int intArray[] = new int[lArraySize];
 		System.out.println("Enter the array element: ");
-		for(int i=0; i<array.length;i++)
+		for(int i=0; i<intArray.length;i++)
 		{
-			array[i] = utility.inputInteger();
+			intArray[i] = utility.inputInteger();
 		}
-		Utility.mergeSort(array, 0, size);
+		Utility.mergeSort(intArray, 0, lArraySize);
 		System.out.println("Array after merge sort");
-		for(int k=0;k<array.length;k++)
+		for(int k=0;k<intArray.length;k++)
 		{
-			System.out.print(array[k] +" ");
+			System.out.print(intArray[k] +" ");
 		}
 		
 	}

@@ -11,17 +11,17 @@ public class SwapNibbles
 	public static void main(String[] args)
 	{
 		Utility utility = new Utility();
-		int decimalnumber;
+		int lDecimalNumber;
 		System.out.println("Enter the decimal no: ");
-		decimalnumber = utility.inputInteger();
+		lDecimalNumber = utility.inputInteger();
 		//Utility.binarynumber(decimalnumber);
-		String binaryString = Utility.toBinary(decimalnumber);
-		String swappedNibbles=Utility.swappedNibbles(binaryString);
-		System.out.println(binaryString);
+		String lBinaryString = Utility.toBinary(lDecimalNumber);
+		String swappedNibbles=Utility.swappedNibbles(lBinaryString);
+		System.out.println(lBinaryString);
 		System.out.println("After swapping nibbles");
 		System.out.println(swappedNibbles);
-		int decimalnum = Utility.binaryToDecimal(swappedNibbles);
-		System.out.println("Decimal number: " +decimalnum);
+		int lDecimalNumber1 = Utility.binaryToDecimal(swappedNibbles);
+		System.out.println("Decimal number: " +lDecimalNumber1);
 		
 	}
 }

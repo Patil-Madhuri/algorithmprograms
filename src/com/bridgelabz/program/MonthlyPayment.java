@@ -10,15 +10,15 @@ public class MonthlyPayment
 {
 	public static void main(String[] args) {
 		Utility utility = new Utility();
-		double principle,rate;
-		int year;
+		double lPrincipleAmount,lRateOfInterest;
+		int lYear;
 		System.out.println("Enter the principal amount: ");
-		principle =utility.inputDouble();;
+		lPrincipleAmount =utility.inputDouble();;
 		System.out.println("Enter the year: ");
-		year = utility.inputInteger();
+		lYear = utility.inputInteger();
 		System.out.println("Enter the rate of interest: ");
-		rate = utility.inputDouble();
-		Utility.monthlyPayment(principle, year, rate);
+		lRateOfInterest = utility.inputDouble();
+		Utility.calculateMonthlyPayment(lPrincipleAmount, lYear, lRateOfInterest);
 		
 	}
 }

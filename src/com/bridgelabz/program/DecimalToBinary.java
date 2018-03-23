@@ -12,12 +12,12 @@ public class DecimalToBinary
 	public static void main(String[] args) 
 	{
 		Utility utility = new Utility();
-		int decimalnumber;
+		int lDecimalNumber;
 		System.out.println("Enter the decimal no: ");
-		decimalnumber = utility.inputInteger();
+		lDecimalNumber = utility.inputInteger();
 		//Utility.binarynumber(decimalnumber);
-		String binary = Utility.toBinary(decimalnumber);
-		System.out.println("Binary number: " +binary);
+		String binaryNumber = Utility.toBinary(lDecimalNumber);
+		System.out.println("Binary number: " +binaryNumber);
 		
 	}
 }

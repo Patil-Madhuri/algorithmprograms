@@ -92,17 +92,21 @@ public class Utility
 		rearrangement of the first. For example, 'heart' and 'earth' are anagrams...
 		using java API
 	 */
-	public static boolean isAnagram(String str1, String str2) {
+	public static boolean isAnagram(String lString1, String lString2) 
+	{
 		boolean isAnagram = true;
-		char arr1[] = str1.toLowerCase().toCharArray();
-		char arr2[] = str2.toLowerCase().toCharArray();
-		Arrays.sort(arr1);
-		Arrays.sort(arr2);
-		if (arr1.length != arr2.length) {
+		char charArray1[] = lString1.toLowerCase().toCharArray();
+		char charArray2[] = lString2.toLowerCase().toCharArray();
+		Arrays.sort(charArray1);
+		Arrays.sort(charArray2);
+		if (charArray1.length != charArray2.length) 
+		{
 			return false;
-		} else {
-			for (int i = 0; i < arr1.length; i++) {
-				if (arr1[i] == arr2[i]) {
+		} 
+		else 
+		{
+			for (int i = 0; i < charArray1.length; i++) {
+				if (charArray1[i] == charArray2[i]) {
 					isAnagram = true;
 				} else {
 					isAnagram = false;
@@ -189,37 +193,37 @@ public class Utility
 		/**
 		 * sort the number in ascending order using merge sort
 		 */
-		public static void mergeSort(int a[],int low,int high)
+		public static void mergeSort(int intArray[],int lLower,int lHigher)
 		{
-			int n = high - low;		//high means size of array
+			int n = lHigher - lLower;		//high means size of array
 			if(n<=1)
 				return;
-			int mid = low + n/2;
-			mergeSort(a,low,mid);
-			mergeSort(a, mid, high);
+			int mid = lLower + n/2;
+			mergeSort(intArray,lLower,mid);
+			mergeSort(intArray, mid, lHigher);
 			int temp[] = new int[n];
-			int i=low,j=mid;	
+			int i=lLower,j=mid;	
 			for(int k=0;k<n;k++)
 			{
 				if(i==mid)
 				{
-					temp[k] = a[j++];
+					temp[k] = intArray[j++];
 				}
-				else if(j == high)
+				else if(j == lHigher)
 				{
-					temp[k] = a[i++];
+					temp[k] = intArray[i++];
 				}
-				else if(a[j] < a[i])
+				else if(intArray[j] < intArray[i])
 				{
-					temp[k] = a[j++];
+					temp[k] = intArray[j++];
 				}
 				else
 				{
-					temp[k] = a[i++];
+					temp[k] = intArray[i++];
 				}
 			}
 			for (int k = 0; k < n; k++) 
-	            a[low + k] = temp[k];   
+				intArray[lLower + k] = temp[k];   
 			
 	    }
 
@@ -228,13 +232,15 @@ public class Utility
 		 * binary search of integer
 		 */
 		
-	public static <T extends Comparable<T>> void binarySearch(T[] array,T intElement,int startingIndex,int lastIndex) {
-				middleIndex=(startingIndex+lastIndex)/2;
+	public static <T extends Comparable<T>> void binarySearch(T[] array,T intElement,int lStartingIndex,int lLastIndex) 
+	{
+				middleIndex=(lStartingIndex+lLastIndex)/2;
+				
 				if(intElement.equals(array[middleIndex]))
 				{
 					System.out.println("Found the Word");
 				}
-				else if(startingIndex==lastIndex)
+				else if(lStartingIndex==lLastIndex)
 				{
 					System.out.println("There is no such element");
 				}
@@ -242,11 +248,11 @@ public class Utility
 				{
 					if(array[middleIndex].compareTo((T) intElement)>0)
 					{
-						binarySearch(array,intElement,startingIndex,middleIndex);
+						binarySearch(array,intElement,lStartingIndex,middleIndex);
 					}
 					else
 					{
-						binarySearch(array,intElement,middleIndex+1,lastIndex);	
+						binarySearch(array,intElement,middleIndex+1,lLastIndex);	
 					}
 				}
 		}
@@ -254,19 +260,19 @@ public class Utility
 	/**
 	 * @param accept the decimalnumber from the user and convert it into respective binary number
 	 */
-	public static String toBinary(int number)
+	public static String toBinary(int lDecimalNumber)
 	{
 		int rem;
-		String bin[] = { "0", "1" };
+		String binaryArray[] = { "0", "1" };
 		String binary = "";
 		int padding = 0;
-		while (number > 0 || padding % 8 != 0) 
+		while (lDecimalNumber > 0 || padding % 8 != 0) 
 		{
-			rem = number % 2;
-			binary = bin[rem] + binary;
-			number = number / 2;
+			rem = lDecimalNumber % 2;
+			binary = binaryArray[rem] + binary;
+			lDecimalNumber = lDecimalNumber / 2;
 			padding++;
-			if (padding % 4 == 0 && number != 0) 
+			if (padding % 4 == 0 && lDecimalNumber != 0) 
 			{
 				binary = "  " + binary;
 
@@ -309,13 +315,14 @@ public class Utility
 	/**
 	 * @param accept the principle,year,rate of interest and calculate the monthly payment
 	 */
-	public static void monthlyPayment(double principle,int year,double rate)
+	
+	public static void calculateMonthlyPayment(double lPrincipleAmount,int lYear,double lRateOfInterest)
 	{
-		double ln = 12 * year;
-		double r = rate /(12 *100);
-		double payment;
-		payment = principle* r / (1- Math.pow(1+r, -ln));
-		System.out.println("Monthly Payment is: "+payment);
+		double ln = 12 * lYear;
+		double r = lRateOfInterest /(12 *100);
+		double lPayment;
+		lPayment = lPrincipleAmount* r / (1- Math.pow(1+r, -ln));
+		System.out.println("Monthly Payment is: "+lPayment);
 	}
 	
 	/**
@@ -324,16 +331,16 @@ public class Utility
 	 * Math.abs(t ­ c/t) > epsilon*t
 		where epsilon = 1e­15;
 	 */
-	public static void sqrtNewtonsMethod(double number)
+	public static void sqrtNewtonsMethod(double lNumber)
 	{
-		 double epsilon = 1e-15;    
-	        double t = number;          
-	        while (Math.abs(t - number/t) > epsilon * t)
+		 double lEpsilon = 1e-15;    
+	        double lT = lNumber;          
+	        while (Math.abs(lT - lNumber/lT) > lEpsilon * lT)
 	        {
-	            t = (number/t + t) / 2.0;
+	        	lT = (lNumber/lT + lT) / 2.0;
 	        }
 	       
-	        System.out.println(t);
+	        System.out.println(lT);
 	}
 
 	/**
@@ -415,13 +422,13 @@ public class Utility
 	public static void printPrimePalindrome()
 	{
 		System.out.println("Palindrome Prime number:==>>");
-		for (int number = 2; number < 1000; number++)
+		for (int lNumber = 2; lNumber < 1000; lNumber++)
 		{
-			if (isPrime(number))
+			if (isPrime(lNumber))
 			{
-				if (isPalindrome(Integer.toString(number))) 
+				if (isPalindrome(Integer.toString(lNumber))) 
 				{
-					System.out.println(number);
+					System.out.println(lNumber);
 				}
 			}
 		}
@@ -458,28 +465,28 @@ public class Utility
 	 * @return
 	 * find the question number
 	 */
-	public static int findQuestionNumber1(int lower,int higher)
+	public static int findQuestionNumber1(int lLowerRange,int lHigherRange)
 	{
-		if(lower > higher)
+		if(lLowerRange > lHigherRange)
 		{
 			return -1;
 		}
-		else if(higher == lower)
+		else if(lHigherRange == lLowerRange)
 		{
-			return  lower;
+			return  lLowerRange;
 		}
-		int middle = (lower+higher)/2;
-		System.out.println("Your number between "+lower + " to "+middle);
+		int middle = (lLowerRange + lHigherRange)/2;
+		System.out.println("Your number between "+lLowerRange + " to "+middle);
 		boolean flag = true;
 		if(flag != scanner.nextBoolean())
 		{
-			lower = middle+1;
+			lLowerRange = middle+1;
 		}
 		else
 		{
-			higher = middle;
+			lHigherRange = middle;
 		}
-		return findQuestionNumber1(lower, higher);
+		return findQuestionNumber1(lLowerRange, lHigherRange);
 	}
 	
 	/**
@@ -625,11 +632,11 @@ public class Utility
 	 * using formula
 	 * Fahrenheit to Celsius: (°F − 32) x 5/9 = °C
 	 */
-	public static void temperatureConversion(double fahrenheit)
+	public static void temperatureConversion(double lFahrenhiTemperature)
 	{
-		 double celsius;
-		 celsius = (fahrenheit-32)*(0.5556);
-		 System.out.println("Temperature in celsius: " +celsius);
+		 double lCelsiusTemperature;
+		 lCelsiusTemperature = (lFahrenhiTemperature-32)*(0.5556);
+		 System.out.println("Temperature in celsius: " +lCelsiusTemperature);
 	}
 	
 	/**
@@ -637,67 +644,67 @@ public class Utility
 	 * using formula
 	 * Celsius to Fahrenheit: (°C × 9/5) + 32 = °F
 	 */
-	public static void temperatureConversion1(double celsius)
+	public static void temperatureConversion1(double lCelsiusTemperature)
 	{
-		double fahrenheit;
-		fahrenheit = (celsius *1.8)+32;
-		System.out.println("Temperature in fahrenhit: " +fahrenheit);
+		double lFahrenhiTemperature;
+		lFahrenhiTemperature = (lCelsiusTemperature *1.8)+32;
+		System.out.println("Temperature in fahrenhit: " +lFahrenhiTemperature);
 		
 	}
 	/**
 	 * @param accept the amount from user and calculate
 	 * how many number of 1000,500,100,50,10,5,2,1 will be returned as change
 	 */
-	public static void calculateNumberOfNotes(int amount)
+	public static void calculateNumberOfNotes(int lAmount)
 	{
-		int notes;
-			if(amount >= 1000)
+		int lNumberOfNotes;
+			if(lAmount >= 1000)
 			{
-			    notes = amount / 1000;
-				amount = amount % 1000;
-				System.out.println("No of 1000 notes="  +notes);
+				lNumberOfNotes = lAmount / 1000;
+			    lAmount = lAmount % 1000;
+				System.out.println("No of 1000 notes= "  +lNumberOfNotes);
 			}
-			if(amount >= 500)
+			if(lAmount >= 500)
 			{
-				notes = amount / 500;
-				amount = amount % 500;
-				System.out.println("No of 500 notes="  +notes);
+				lNumberOfNotes = lAmount / 500;
+				lAmount = lAmount % 500;
+				System.out.println("No of 500 notes= "  +lNumberOfNotes);
 			}
-			if(amount >= 100)
+			if(lAmount >= 100)
 			{
-				notes = amount / 100;
-				amount = amount % 100;
-				System.out.println("No of 100 notes="  +notes);
+				lNumberOfNotes = lAmount / 100;
+				lAmount = lAmount % 100;
+				System.out.println("No of 100 notes= "  +lNumberOfNotes);
 			}
-			if(amount >= 50)
+			if(lAmount >= 50)
 			{
-				notes = amount /50;
-				amount = amount % 50;
-				System.out.println("No of 50 notes= " +notes);
+				lNumberOfNotes = lAmount /50;
+				lAmount = lAmount % 50;
+				System.out.println("No of 50 notes= " +lNumberOfNotes);
 			}
-			if(amount >=10)
+			if(lAmount >=10)
 			{
-				notes = amount /10;
-				amount = amount % 10;
-				System.out.println("No of 10 notes= " +notes);
+				lNumberOfNotes = lAmount /10;
+				lAmount = lAmount % 10;
+				System.out.println("No of 10 notes= " +lNumberOfNotes);
 			}
-			if(amount >=5)
+			if(lAmount >=5)
 			{
-				notes = amount /5;
-				amount = amount %5;
-				System.out.println("No of 5 Rs coins= "+notes);
+				lNumberOfNotes = lAmount /5;
+				lAmount = lAmount %5;
+				System.out.println("No of 5 Rs coins= "+lNumberOfNotes);
 			}
-			if(amount >=2)
+			if(lAmount >=2)
 			{
-				notes = amount/2;
-				amount = amount%2;
-				System.out.println("No of 2 Rs coins= " +notes);
+				lNumberOfNotes = lAmount/2;
+				lAmount = lAmount%2;
+				System.out.println("No of 2 Rs coins= " +lNumberOfNotes);
 			}
-			if(amount >=1)
+			if(lAmount >=1)
 			{
-				notes = amount /1;
-				amount = amount%1;
-				System.out.println("No of 1 Rs coins= " +notes);
+				lNumberOfNotes = lAmount /1;
+				lAmount = lAmount%1;
+				System.out.println("No of 1 Rs coins= " +lNumberOfNotes);
 			}
 			 
 	}

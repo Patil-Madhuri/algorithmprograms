@@ -13,16 +13,16 @@ public class QuestionNumber
 	{
 		Utility utility = new Utility();
 		System.out.println("Enter any number: ");
-		int number = utility.inputInteger();
-		int range = (int) Math.pow(2, number-1);
-		int result=Utility.findQuestionNumber1(0,range);
-		if(result != -1)
+		int lNumber = utility.inputInteger();
+		int lRange = (int) Math.pow(2, lNumber-1);
+		int lResult=Utility.findQuestionNumber1(0,lRange);
+		if(lResult != -1)
 		{
-			System.out.println("Your number is: " +number);
+			System.out.println("Your number is: " +lNumber);
 		}
 		else
 		{
-			System.out.println("Invalid ");
+			System.out.println("Invalid Number");
 		}
 	}
 	}

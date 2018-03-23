@@ -11,16 +11,16 @@ public class BinarySearchFile
 	public static void main(String[] args) 
 	{
 		Utility utility = new Utility();
-		String words[]={},search;
-		words =Utility.readFile("/home/bridgeit/Documents/MADHURI/demo");
-		for(int i=0;i<words.length;i++)
+		String wordsArray[]={},lSearchWord;
+		wordsArray =Utility.readFile("/home/bridgeit/Documents/MADHURI/binarySearch");
+		for(int i=0;i<wordsArray.length;i++)
 		{
-			System.out.print(words[i] + " ");
+			System.out.print(wordsArray[i] + " ");
 		}
 		System.out.println("\nEnter word to search");
-		search=utility.inputString();
-		Utility.bubbleSort(words);
-		Utility.binarySearch(words, search, 0, words.length-1 );
+		lSearchWord=utility.inputString();
+		Utility.bubbleSort(wordsArray);
+		Utility.binarySearch(wordsArray, lSearchWord, 0, wordsArray.length-1 );
 		
 		   
 	}

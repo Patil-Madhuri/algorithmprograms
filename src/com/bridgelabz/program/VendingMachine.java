@@ -13,8 +13,8 @@ public class VendingMachine
 	{
 		Utility utility = new Utility();
 		System.out.println("Enter the amount=");
-		int amount = utility.inputInteger();
-		Utility.calculateNumberOfNotes(amount);
+		int lAmount = utility.inputInteger();
+		Utility.calculateNumberOfNotes(lAmount);
 		
 		
 	}
